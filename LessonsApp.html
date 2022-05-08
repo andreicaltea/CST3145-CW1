@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lessons App</title>
-    <script src="https://unpkg.com/vue@next"></script>
-</head>
-<body>
-    <div id="app">
-        <h1>Lessons List</h1>
-        <input v-model="newTask">
-        <input type="button" v-on:click='addItems'> 
-        <ul id="taskList"></ul>
-    </div>
-    <script src="App.js"></script>
-
-    <script>
-        let app = new Vue({
-            el: '#app',
-            data: { newTask:   ''},
-            methods: {
-                addItem: function() {
-                    let newItem = document.createElement('li');
-                    newItem.innerText = app.newTask;
-                    document.getElementById('taskList').appendChild(newItem);
-                    app.newTask = '';
-                }
-            }
-        })
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://unpkg.com/vue@next">
     </script>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>{{ product }}</h1>
+        <h3> {{ description }}</h3>
+    </div>
+
+    <div id="app2">
+        <h1>{{ product1 }}</h1>
+    </div>
+        <script src="./main.js"></script>
+        <script>
+            const mountedApp = app.mount('#app')  
+        </script>
+
+        <script>
+            const mountedApp2 = app.mount('#app2')
+        </script>
+
 </body>
+
 </html>
