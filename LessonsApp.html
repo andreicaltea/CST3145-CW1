@@ -5,31 +5,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--CLASSIC HTML CODE FOR THE PAGE TO WORK AND DISPLAY ITS CONTENTS-->
     <title>Lessons App</title>
+<!--TITLE OF THE PAGE-->
+
     <link rel="stylesheet" href="./styles.css">
+<!--LINKING STYLESHEET TO THE HTML PROJECT-->
+
     <script src="https://unpkg.com/vue@next">
     </script>
+<!--IMPORTING VUE.JS TO THE CURRENT PROJECT-->
+
 </head>
-
 <body>
+<!--THE END OF HEAD TAG AND THE BEGINNING OF THE BODY TAG-->
 
-    <div id="app">
+<div id="app">
         <h1>{{ product }}</h1>
-        <h3> {{ description }}</h3>
-    </div>
+        <h2> {{ description }}</h2>
+<!--ABOVE IS THE TITLE AND DESCRIPTION DIV-->
 
-    <div id="app2">
-        <h1>{{ product1 }}</h1>
-    </div>
-        <script src="./main.js"></script>
-        <script>
-            const mountedApp = app.mount('#app')  
-        </script>
+    <div class="product-info">
+<!--ABOVE IS THE PRODUCT DIV-->
+            
+            <h4>MATHS LESSON</h4>
+<!--PRODUCT NAME-->
 
-        <script>
-            const mountedApp2 = app.mount('#app2')
-        </script>
+        <div class="product-image">
+        <img v-bind:src="image">
+<!--PRODUCT IMAGE-->
+            
+            <ul>
+                <li v-for="detail in details">{{detail}}</li>
+            </ul>
+<!--LIST OF DETAILS-->
+
+                <div class="AddToCartBTN">
+                    <p v-if="inventory">Add to Cart</p>
+                    <p v-else-if="inventory > 0">OUT OF STOCK</p>
+                    <p v-if="onSale">On Sale!</p>
+<!--ADD TO CART BUTTON-->
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--ABOVE IS THE APP WORKING-->
+
+    <script src="./main.js"></script>
+<!--LINKING JAVASCRIPT WITH HTML SO THAT VUE.JS WORKS-->
+
+
+    <script>
+        const mountedApp = app.mount('#app')  
+    </script>
+<!--MOUNTED THE APP TO MAKE IT RUN (DISPLAY ALL OF THE ABOVE)-->
+
 
 </body>
-
 </html>

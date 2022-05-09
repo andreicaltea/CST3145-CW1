@@ -3,20 +3,10 @@ const app = Vue.createApp({
         return {
             product: 'LESSONS LIST',
             description: 'Please use "ADD TO CART" buttton to book a lesson!',
-
+            image: './Images/english.png',
+            inventory: 5,
+            details: ['Subject: Math', 'Location: London', 'Price: £100'],
         }
     }
 })
 
-const app2 = Vue.createApp({
-    data() {
-        return {
-            product1: 'ENGLISH LESSON',
-            description: 'Learn how to speak English',
-            location: 'Wembley, London',
-            price: '£150.00',
-            spaces: '5',
-
-        }
-    }
-})
