@@ -28,32 +28,29 @@
 <div class="cart">CART({{ cart }})</div>
 <!--ABOVE IS THE DIV FOR THE SHOPPING CART-->
 
-    <div class="product-info">
-<!--ABOVE IS THE PRODUCT DIV-->
-            
-            <h4>MATHS LESSON</h4>
-<!--PRODUCT NAME-->
-
-        <div class="product-image">
-        <img v-bind:src="image">
-<!--PRODUCT IMAGE-->
-            
+<div class="product-display">
+    <div class="product-container">
+        <h4>MATHS LESSON</h4>
+        <div class="maths-lesson-img">
+            <img v-bind:src="mathsLesson">
+        </div>
+        <div class="product-info">
+            <p v-if="inventory">Add to Cart</p>
+            <p v-else-if="inventory > 0">OUT OF STOCK</p>
             <ul>
                 <li v-for="detail in details">{{detail}}</li>
             </ul>
-<!--LIST OF ITEMS IN THE PRODUCT-->
-
-                <div class="AddToCartBTN">
-                    <p v-if="inventory">Add to Cart</p>
-                    <p v-else-if="inventory > 0">OUT OF STOCK</p>
-                    <button class="button" v-on:click="addToCart">ADD TO CART</button>
-                    <button class="button" v-on:click="removeFromCart">REMOVE FROM CART</button>
-<!--ADD TO CART BUTTON AND REMOVE FROM CART BUTTON-->
-
+            <div class="add">
+                <button class="button" v-on:click="addToCart">ADD TO CART</button>
+            </div>
+            <div class="remove">
+                <button class="button" v-on:click="removeFromCart">REMOVE FROM CART</button>
             </div>
         </div>
     </div>
 </div>
+
+
 <!--ABOVE IS THE APP WORKING-->
 
     <script src="./main.js"></script>

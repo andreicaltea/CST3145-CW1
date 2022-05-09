@@ -4,7 +4,7 @@ const app = Vue.createApp({
             cart: 0,
             product: 'LESSONS LIST',
             description: 'Please use "ADD TO CART" buttton to book a lesson!',
-            image: './Images/english.png',
+            mathsLesson: './Images/maths.png',
             button: 5,
             details: ['Subject: Math', 'Location: London', 'Price: £100'],
            
