@@ -25,6 +25,9 @@
         <h2> {{ description }}</h2>
 <!--ABOVE IS THE TITLE AND DESCRIPTION DIV-->
 
+<div class="cart">CART({{ cart }})</div>
+<!--ABOVE IS THE DIV FOR THE SHOPPING CART-->
+
     <div class="product-info">
 <!--ABOVE IS THE PRODUCT DIV-->
             
@@ -43,8 +46,9 @@
                 <div class="AddToCartBTN">
                     <p v-if="inventory">Add to Cart</p>
                     <p v-else-if="inventory > 0">OUT OF STOCK</p>
-                    <p v-if="onSale">On Sale!</p>
-<!--ADD TO CART BUTTON-->
+                    <button class="button" v-on:click="addToCart">ADD TO CART</button>
+                    <button class="button" v-on:click="removeFromCart">REMOVE FROM CART</button>
+<!--ADD TO CART BUTTON AND REMOVE FROM CART BUTTON-->
 
             </div>
         </div>
@@ -61,10 +65,9 @@
     </script>
 <!--MOUNTED THE APP TO MAKE IT RUN (DISPLAY ALL OF THE ABOVE)-->
 
-
 </body>
 </html>
-
+<!--END OF ALL HTML TAGS-->
 
 
 <!--ALL THE COMMENTS ARE BELOW EACH RESPECTIVE LINE OF CODE-->
